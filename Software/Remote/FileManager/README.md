@@ -20,3 +20,7 @@ Visitor5DataMember1,Visitor5DataMember2
 When implementing `save` on visitors make sure to export class data as a string using CSV in between the visitor's data. 
 
 When implementing `load` use your favorite CSV decoding method as the `FileManager` will pass the corresponding line from the file to `load`.
+
+# Navigate:
+
+`Software` : [Link](Software/) - Regards Software design and source code

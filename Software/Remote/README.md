@@ -11,3 +11,5 @@ This is software that is designed to be ran on a remote device not contiguous to
 `Utils` : [Link](Utils/) - utility classes/files 
 
 `UML Diagrams` : [Link](Utils/) - diagrams to show class relationships using VSCode extension: `Draw.io Integration`
+
+`Software` : [Link](Software/) - Regards Software design and source code

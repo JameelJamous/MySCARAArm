@@ -20,4 +20,6 @@ SRM Assembly:
 | 01 | Main |
 | 02 | Manipulator |
 
+### Navigate:
+`Home` : [Link](MySCARAArm/) - Home Page
 

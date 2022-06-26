@@ -10,7 +10,7 @@ The mechanical design for the arm based off of SCARA robotic arms where the Z-ax
 
 Navigate:
 
-`CAD Files` : [Link](CAD%20Files/README.md) - Regarding Mechanical Design and Solidwork Part files
+`CAD Files` : [Link](CAD%20Files/) - Regarding Mechanical Design and Solidwork Part files
 
-`Software` : [Link](Software/README.md)
+`Software` : [Link](Software/) - Regards Software design and source code
 

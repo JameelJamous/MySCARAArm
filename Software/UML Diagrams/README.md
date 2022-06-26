@@ -2,4 +2,4 @@
 
 Not implemented yet
 
-`Home` : [Link](https://github.com/JameelJamous/MySCARAArm) - Home Page
+`Software` : [Link](https://github.com/JameelJamous/MySCARAArm/tree/main/Software) - Regards Software design and source code

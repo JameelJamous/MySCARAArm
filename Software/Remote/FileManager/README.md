@@ -21,6 +21,6 @@ When implementing `save` on visitors make sure to export class data as a string 
 
 When implementing `load` use your favorite CSV decoding method as the `FileManager` will pass the corresponding line from the file to `load`.
 
-# Navigate:
+### Navigate:
 
-`Software` : [Link](Software/) - Regards Software design and source code
+`Home` : [Link](https://github.com/JameelJamous/MySCARAArm) - Home Page

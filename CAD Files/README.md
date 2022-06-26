@@ -21,5 +21,5 @@ SRM Assembly:
 | 02 | Manipulator |
 
 ### Navigate:
-`Home` : [Link](/MySCARAArm/) - Home Page
+`Home` : [Link](https://github.com/JameelJamous/MySCARAArm) - Home Page
 

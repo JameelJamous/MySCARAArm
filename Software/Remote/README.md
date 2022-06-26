@@ -4,10 +4,10 @@ This is software that is designed to be ran on a remote device not contiguous to
 
 ### Navigate:
 
-`FileManager` : [Link](FileManager/README.md) - saves and load data to and from memory 
+`FileManager` : [Link](FileManager/) - saves and load data to and from memory 
 
-`IKSolver` : [Link](IKSolver/README.md) - solves the inverse kinematics with the current angles 
+`IKSolver` : [Link](IKSolver/) - solves the inverse kinematics with the current angles 
 
-`Utils` : [Link](Utils/README.md) - utility classes/files 
+`Utils` : [Link](Utils/) - utility classes/files 
 
-`UML Diagrams` : [Link](Utils/README.md) - diagrams to show class relationships using VSCode extension: `Draw.io Integration`
+`UML Diagrams` : [Link](Utils/) - diagrams to show class relationships using VSCode extension: `Draw.io Integration`

@@ -2,7 +2,7 @@
 
 ### Navigate: 
 
-`MCU` : [Link](MCU/README.md)
-`Remote` : [Link](Remote/README.md)
-`UML Diagrams` : [Link](UML%20Diagrams/README.md) 
+`MCU` : [Link](MCU/)
+`Remote` : [Link](Remote/)
+`UML Diagrams` : [Link](UML%20Diagrams/) 
 `Home` : [Link](https://github.com/JameelJamous/MySCARAArm) - Home Page

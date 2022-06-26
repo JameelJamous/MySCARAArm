@@ -23,4 +23,4 @@ When implementing `load` use your favorite CSV decoding method as the `FileManag
 
 ### Navigate:
 
-`Home` : [Link](https://github.com/JameelJamous/MySCARAArm) - Home Page
+`Software` : [Link](https://github.com/JameelJamous/MySCARAArm/tree/main/Software) - Regards Software design and source code

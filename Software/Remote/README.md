@@ -12,4 +12,4 @@ This is software that is designed to be ran on a remote device not contiguous to
 
 `UML Diagrams` : [Link](Utils/) - diagrams to show class relationships using VSCode extension: `Draw.io Integration`
 
-`Home` : [Link](https://github.com/JameelJamous/MySCARAArm) - Home Page
+`Software` : [Link](https://github.com/JameelJamous/MySCARAArm/tree/main/Software) - Regards Software design and source code

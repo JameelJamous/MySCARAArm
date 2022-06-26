@@ -4,4 +4,4 @@ This software must tell the MCU to send and recieve command from the remote devi
 
 ### Navigate:
 
-`Home` : [Link](https://github.com/JameelJamous/MySCARAArm) - Home Page
+`Software` : [Link](https://github.com/JameelJamous/MySCARAArm/tree/main/Software) - Regards Software design and source code

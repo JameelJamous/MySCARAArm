@@ -1,4 +1,4 @@
-#Filemanager and its usage
+# Filemanager and its usage
 
 `FileManager` is a class that allows the storage of its visitors into a file with the `.rob` extension. When initializing a `FileManager`, it is best to specify a path to folder to create, save, and load files. 
 

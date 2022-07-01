@@ -3,8 +3,9 @@
 The File nomenclature is as follows 
 
 `SRM##-name` - SCARA ROBOT MODEL item no - name of what the model is
+`RDM##-name` - Rapid development MODEL item no - name of what the model is
 
-SRM Parts:
+SRM Parts List:
 | Part No. | Description |
 | ----------- | ----------- |
 | 01 | Base of the arm |
@@ -18,6 +19,18 @@ SRM Assembly:
 | Assembly No. | Description |
 | ----------- | ----------- |
 | 01 | Main |
+| 02 | Manipulator |
+
+RDM Assembly:
+| Assembly No. | Description |
+| ----------- | ----------- |
+| 01 | Main |
+| 02 | Manipulator |
+
+RDM Parts List:
+| Part No. | Description |
+| ----------- | ----------- |
+| 01 | Base |
 | 02 | Manipulator |
 
 ### Navigate:

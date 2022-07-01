@@ -8,6 +8,8 @@ My name is Jameel Jamous. I am attending the University of California, San Diego
 
 The mechanical design for the arm based off of SCARA robotic arms where the Z-axis is a prismatic joint and X and Y axis are based off of revolute joints.
 
+The rapid development model was made to quickly test, debug, and analyze performance of the written software.
+
 Navigate:
 
 `CAD Files` : [Link](CAD%20Files/) - Regarding Mechanical Design and Solidwork Part files

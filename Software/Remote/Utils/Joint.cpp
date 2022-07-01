@@ -1,11 +1,12 @@
 #include "Joint.h"
 
 Joint::Joint(float distanceToNext, float maxAngle,
-	float minAngle, std::string jointType) {
+	float minAngle, std::string jointType, ChainType chainType) {
 	jointParams.push_back(distanceToNext);
 	jointParams.push_back(maxAngle);
 	jointParams.push_back(minAngle);
 	type = jointType;
+	posInChain = chainType;
 }
 
 Joint::Joint(const Joint& aCopy) { *this = aCopy; }
@@ -20,7 +21,19 @@ Joint::~Joint(){ /* Do Nothing */ }
 
 float Joint::getParam(size_t paramNo) { return jointParams[paramNo]; }
 
-std::string Joint::getType() { return type; }
+std::string Joint::getJointType() { return type; }
+
+ChainType Joint::getPositionInChain() { return posInChain; }
+
+void Joint::defineJointType(std::string aType){ type = aType; }
+
+void Joint::defineAngles(float maxAngle, float minAngle){ 
+	jointParams[1] = maxAngle; jointParams[2] = minAngle;
+}
+
+void Joint::defineDistance(float distanceToNext){ jointParams[0] = distanceToNext; }
+
+void Joint::defineChainType(ChainType aType){ posInChain = aType; }
 
 std::string Joint::save() const {
 	std::string outStr;

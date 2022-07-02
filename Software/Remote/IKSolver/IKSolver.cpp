@@ -50,7 +50,15 @@ bool IKSolver::setupWorkSpace() {
  
 
 bool IKSolver::solve() {
-	//SORT JOINTS 
+	//SORT JOINTS
+	
+	//gamma = atan2(theTarget.y, theTarget.x);
+	//count the number of joints
+	//nth joint is 
+	//xN = theTarget.x - joint.getParam(0)*acos(gamma);
+	//yN = theTarget.y - joint.getParma(0)*asin(gamma);
+
+	//theta 1
 
 	return false;
 }	
@@ -58,6 +66,7 @@ bool IKSolver::solve() {
 /*
 	We have angles from MCU
 	
+	- jacobian changes with number of links
 
 	param = (pow(target_x,2) + pow(target_y,2) - pow(L1,2) - pow(L2,2))/2*L1*L2;
 	theta2 = acos(param);

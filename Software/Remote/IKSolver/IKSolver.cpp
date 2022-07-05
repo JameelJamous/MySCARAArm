@@ -49,16 +49,9 @@ bool IKSolver::setupWorkSpace() {
 
  
 
-bool IKSolver::solve() {
-	//SORT JOINTS
-	
-	//gamma = atan2(theTarget.y, theTarget.x);
-	//count the number of joints
-	//nth joint is 
-	//xN = theTarget.x - joint.getParam(0)*acos(gamma);
-	//yN = theTarget.y - joint.getParma(0)*asin(gamma);
+bool IKSolver::solve() { //using analytical approach
 
-	//theta 1
+	
 
 	return false;
 }	

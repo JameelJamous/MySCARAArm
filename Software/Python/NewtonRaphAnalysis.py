@@ -1,13 +1,21 @@
+from enum import Enum
+from re import X
 import matplotlib.pyplot as plt
 import math
 import numpy as np
 import random as rand
 
+class Quadrants(Enum):
+    One = 0
+    Two = 1
+    Three = 2
+    Four = 3
+
 # FWD kinematic equations
 def F_x(theta, links): 
     row1 = abs(links[0]*math.cos(theta[0])+links[1]*math.cos(theta[0]+theta[1]))
     row2 = abs(links[0]*math.sin(theta[0])+links[1]*math.sin(theta[0]+theta[1]))
-    print(theta, links)
+    #print(theta, links)
     return np.array([row1, row2])   
 
 # returns inverse jacobian
@@ -37,7 +45,33 @@ def findNext(x, links, desired):
 def currentRelativeError(x_new, x):
     return np.absolute((x_new-x)/(x_new))
 
+def determineQuadrant(x_og):
+    x = x_og # copy
+    while(not(np.less_equal(x,2*math.pi).all() and np.greater_equal(x,0).all())):
+        #print(x)
+        #print(np.less_equal(x,2*math.pi).all(), np.greater_equal(x,0).all())
+        #print(not(np.less_equal(x,2*math.pi).all(), np.greater_equal(x,0).all()))
+        for i in range(len(x)):
+            if(x[i] < 0.0):  
+                if(not(x[i] <= 2*math.pi and x[i] >= 0)): 
+                    x[i] = x[i] + 2*math.pi
+            else:
+                if(not(x[i] <= 2*math.pi and x[i] >= 0)):
+                    x[i] = x[i] - 2*math.pi
+        #print(x)
+        #input()
+                
+    #input()
+    #print(x)
+    div = np.divide(x,math.pi/2)
+    mod_trunc = np.trunc(div)
+    #print(mod_trunc)
+    #input()
+    return [Quadrants(mod_trunc[0]), Quadrants(mod_trunc[1])], x
+
 def getRefAngle(x):
+    
+    #determineQuadrant(x)
     angle = np.mod(x,math.pi)
     while np.greater(angle,math.pi/2).all():
         angle = np.subtract(math.pi,angle)
@@ -52,12 +86,13 @@ def newtonRaph(guess, error, desired, max_iter, links):
         #print(guess, i)
         x_new = findNext(guess, links, desired)
         if(np.less_equal(currentRelativeError(x_new, guess), error).all()):
-            return getRefAngle(x_new), i, x_new
+            _ , processed = determineQuadrant(x_new)
+            return processed, i, x_new
         else:
             guess = x_new
             i = i + 1 
             if i > max_iter:
-                return "Not found", i
+                return "Not found", i, "Not found"
 
 def analApproach(desired, links):
     num = (math.pow(desired[0],2)+math.pow(desired[1],2)-math.pow(links[0],2)-math.pow(links[1],2))
@@ -70,23 +105,27 @@ def analApproach(desired, links):
 
 
 def main():
-    theta = [math.pi/3, math.pi/2]
+    
+    theta = [math.pi/2, math.pi/2]
     links = [1.0, 1.0]
-    desired = [0.75, 0.5]
+    desired = [0.5, 0.5]
 
     row1 = [math.pi/2]
     row2 = [math.pi/3]  
 
 
     maxIter = 1000
-    errMax = np.array(np.vstack((0.0000001, 0.0000001)))
+    errMax = np.array(np.vstack((0.0001, 0.0001)))
 
     print("starting newtonRaph method")
     reached, i, unprocessed = newtonRaph(theta, errMax, desired, maxIter, links)
     print("-----------------------")
     print("newtonRaph Angles(processed):", reached)
     print("newtonRaph Angles(unprocessed): ", unprocessed)
+    #print(determineQuadrant(unprocessed))
+    #print(determineQuadrant(reached))
     print("iterations: ", i)
+    
 
     print("Fwd Kinematics with newtonRaph angles(processed): ", F_x(reached,links))
     print("Fwd Kinematics with newtonRaph angles(unprocessed): ", F_x(unprocessed,links))
@@ -98,11 +137,13 @@ def main():
     t1, t2 = analApproach(desired, links)
     theArray = np.array(np.vstack((t1,t2)))
     print("-----------------------------------")
-    print("Analytical Approach: ", np.rad2deg(theArray))
+    _, x = determineQuadrant(theArray)
+    print("Analytical Approach: ", x)
 
     print("Fwd Kinematics with Analytic angles: ", F_x(theArray, links))
 
     print("Desired: ", desired)
+    
 
 if __name__ == "__main__":
     main()

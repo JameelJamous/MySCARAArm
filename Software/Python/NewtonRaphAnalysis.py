@@ -1,15 +1,21 @@
 from enum import Enum
-from re import X
 import matplotlib.pyplot as plt
 import math
 import numpy as np
 import random as rand
+
 
 class Quadrants(Enum):
     One = 0
     Two = 1
     Three = 2
     Four = 3
+    
+"""
+callbacks need F which is a nd vector containing equations for each dimenstion
+"""
+
+
 
 # FWD kinematic equations
 def F_x(theta, links): 
@@ -18,6 +24,8 @@ def F_x(theta, links):
     #print(theta, links)
     return np.array([row1, row2])   
 
+x = F_x
+print(x)
 # returns inverse jacobian
 def invJacobian(theta, links):
     row1 = [(-links[0]*math.sin(theta[0])-links[1]*math.sin(theta[0]+theta[1])),(-links[1]*math.sin(theta[0]+theta[1]))]
@@ -39,7 +47,8 @@ def newGuess():
     return np.vstack((math.pi*rand.uniform(0,2), math.pi*rand.uniform(0,2)))
 
 def findNext(x, links, desired):
-    #print("F_x: ", F_x(x,links), "Inv: ", invJacobian(x,links))
+    print("F_x: ", F_x(x,links), "Inv: ", invJacobian(x,links))
+    print("Find Next: ", np.subtract(x,np.subtract(np.matmul(desired,invJacobian(x,links)),np.matmul(F_x(x, links),invJacobian(x, links)))))
     return  np.subtract(x,np.subtract(np.matmul(desired,invJacobian(x,links)),np.matmul(F_x(x, links),invJacobian(x, links))))
 
 def currentRelativeError(x_new, x):

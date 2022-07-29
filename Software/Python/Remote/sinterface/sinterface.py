@@ -4,6 +4,7 @@ from utils import NewtonRaph
 import math
 import numpy as np
 import random as rand
+
 """
 Handles Serial Communication between SCARA arm and this remote software
 """
